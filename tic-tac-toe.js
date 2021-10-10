@@ -21,6 +21,8 @@ function tic_tac_toe(){
 
        tile.onclick = function on_click(){
 
+        if (gameTracker[tile.id] == 'h'){
+
         if (cur_player === 'X'){
             tile.innerText = 'O';
             tile.classList.add('O');
@@ -72,6 +74,11 @@ function tic_tac_toe(){
         else if (gameTracker[0]!== 'h' && (gameTracker[0]== gameTracker[4] && gameTracker[4]==gameTracker[8])){
             status.innerText = 'Congratulations! ' + gameTracker[0] + ' is the Winner!'
             status.setAttribute('class','you-won');
+        } }
+
+        else{
+
+            return;
         }
 
 
