@@ -106,6 +106,8 @@ function tic_tac_toe(){
 
        status.classList.remove('you-won');
        status.innerText = "Move your mouse over a square and click to play an X or an O";
+       gameTracker = ['h','h','h','h','h','h','h','h','h']
+       cur_player = 'O';
    }
 
 }
