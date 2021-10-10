@@ -26,6 +26,14 @@ function tic_tac_toe(){
             cur_player = 'X';
         }
        }
+
+       tile.onmouseover = function mouse_over(){
+        tile.classList.add('hover');
+       }
+
+       tile.onmouseout = function mouse_out(){
+           tile.classList.remove('hover');
+       }
    }
    
    
