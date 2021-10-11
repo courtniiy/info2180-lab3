@@ -13,6 +13,7 @@ function tic_tac_toe(){
    let status =document.getElementById('status');
    let new_game = document.getElementsByClassName('btn')[0];
    console.log(new_game);
+   let game_on = true
 
 
    for(let tile of tiles) {
@@ -21,7 +22,7 @@ function tic_tac_toe(){
 
        tile.onclick = function on_click(){
 
-        if (gameTracker[tile.id] == 'h'){
+        if (gameTracker[tile.id] == 'h' && game_on == true){
 
         if (cur_player === 'X'){
             tile.innerText = 'O';
@@ -39,41 +40,48 @@ function tic_tac_toe(){
         if (gameTracker[0]!== 'h' && (gameTracker[0]== gameTracker[1] && gameTracker[1]==gameTracker[2])){
             status.innerText = 'Congratulations! ' + gameTracker[0] + ' is the Winner!'
             status.setAttribute('class','you-won');
-            return;
+            game_on = false;
         }
         else if (gameTracker[3]!== 'h' && (gameTracker[3]== gameTracker[4] && gameTracker[4]==gameTracker[5])){
             status.innerText = 'Congratulations! ' + gameTracker[3] + ' is the Winner!'
             status.setAttribute('class','you-won');
+            game_on = false;
         }
 
         else if (gameTracker[6]!== 'h' && (gameTracker[6]== gameTracker[7] && gameTracker[7]==gameTracker[8])){
             status.innerText = 'Congratulations! ' + gameTracker[6] + ' is the Winner!'
             status.setAttribute('class','you-won');
+            game_on = false;
         }
 
         else if (gameTracker[0]!== 'h' && (gameTracker[0]== gameTracker[3] && gameTracker[3]==gameTracker[6])){
             status.innerText = 'Congratulations! ' + gameTracker[0] + ' is the Winner!'
             status.setAttribute('class','you-won');
+            game_on = false;
         }
 
         else if (gameTracker[2]!== 'h' && (gameTracker[2]== gameTracker[4] && gameTracker[4]==gameTracker[6])){
-            status.innerText = 'Congratulations! ' + gameTracker[1] + ' is the Winner!'
+            status.innerText = 'Congratulations! ' + gameTracker[2] + ' is the Winner!'
             status.setAttribute('class','you-won');
+            game_on = false;
         }
 
         else if (gameTracker[4]!== 'h' && (gameTracker[1]== gameTracker[4] && gameTracker[4]==gameTracker[7])){
-            status.innerText = 'Congratulations! ' + gameTracker[1] + ' is the Winner!'
+            status.innerText = 'Congratulations! ' + gameTracker[4] + ' is the Winner!'
             status.setAttribute('class','you-won');
+            game_on = false;
         }
 
         else if (gameTracker[2]!== 'h' && (gameTracker[2]== gameTracker[5] && gameTracker[5]==gameTracker[8])){
             status.innerText = 'Congratulations! ' + gameTracker[2] + ' is the Winner!'
             status.setAttribute('class','you-won');
+            game_on = false;
         }
 
         else if (gameTracker[0]!== 'h' && (gameTracker[0]== gameTracker[4] && gameTracker[4]==gameTracker[8])){
             status.innerText = 'Congratulations! ' + gameTracker[0] + ' is the Winner!'
             status.setAttribute('class','you-won');
+            game_on = false;
         } }
 
         else{
@@ -108,6 +116,7 @@ function tic_tac_toe(){
        status.innerText = "Move your mouse over a square and click to play an X or an O";
        gameTracker = ['h','h','h','h','h','h','h','h','h']
        cur_player = 'O';
+       game_on = true;
    }
 
 }
